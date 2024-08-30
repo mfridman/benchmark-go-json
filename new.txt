@@ -1,0 +1,46 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/mfridman/benchmark-go-json
+cpu: Apple M1 Max
+BenchmarkStandardLibrary-10      	       8	 136016625 ns/op	15984171 B/op	       3 allocs/op
+BenchmarkStandardLibrary-10      	       8	 133287703 ns/op	25165852 B/op	       9 allocs/op
+BenchmarkStandardLibrary-10      	       8	 132379338 ns/op	41151112 B/op	      16 allocs/op
+BenchmarkStandardLibrary-10      	       8	 133659391 ns/op	15984821 B/op	       5 allocs/op
+BenchmarkStandardLibrary-10      	       8	 127617396 ns/op	15984485 B/op	       4 allocs/op
+BenchmarkStandardLibrary-10      	       8	 129409729 ns/op	41150446 B/op	      14 allocs/op
+BenchmarkStandardLibrary-10      	       8	 127418875 ns/op	15984485 B/op	       4 allocs/op
+BenchmarkStandardLibrary-10      	       8	 127908115 ns/op	15984485 B/op	       4 allocs/op
+BenchmarkStandardLibrary-10      	       8	 128015932 ns/op	15984171 B/op	       3 allocs/op
+BenchmarkStandardLibrary-10      	       8	 127452599 ns/op	12582413 B/op	       2 allocs/op
+BenchmarkStandardLibraryV2-10    	      15	  77993475 ns/op	243999120 B/op	   41190 allocs/op
+BenchmarkStandardLibraryV2-10    	      14	  81193699 ns/op	251356245 B/op	   41218 allocs/op
+BenchmarkStandardLibraryV2-10    	      14	  81647250 ns/op	253747528 B/op	   41199 allocs/op
+BenchmarkStandardLibraryV2-10    	      14	  90406086 ns/op	246550960 B/op	   41183 allocs/op
+BenchmarkStandardLibraryV2-10    	      13	  83744506 ns/op	252085065 B/op	   41186 allocs/op
+BenchmarkStandardLibraryV2-10    	      14	  80006851 ns/op	247758275 B/op	   41199 allocs/op
+BenchmarkStandardLibraryV2-10    	      14	  79889455 ns/op	259741600 B/op	   41210 allocs/op
+BenchmarkStandardLibraryV2-10    	      14	  83333018 ns/op	253748251 B/op	   41200 allocs/op
+BenchmarkStandardLibraryV2-10    	      14	  82121682 ns/op	248949914 B/op	   41184 allocs/op
+BenchmarkStandardLibraryV2-10    	      14	  80741345 ns/op	201013056 B/op	   41169 allocs/op
+BenchmarkGoccyJSON-10            	      16	  68203357 ns/op	 6291116 B/op	       1 allocs/op
+BenchmarkGoccyJSON-10            	      16	  68361662 ns/op	 6291116 B/op	       1 allocs/op
+BenchmarkGoccyJSON-10            	      15	  67760889 ns/op	25951837 B/op	       6 allocs/op
+BenchmarkGoccyJSON-10            	      16	  67443203 ns/op	11747646 B/op	       3 allocs/op
+BenchmarkGoccyJSON-10            	      16	  68803107 ns/op	35864422 B/op	      10 allocs/op
+BenchmarkGoccyJSON-10            	      16	  69734635 ns/op	29573185 B/op	       8 allocs/op
+BenchmarkGoccyJSON-10            	      16	  70832385 ns/op	30621804 B/op	      10 allocs/op
+BenchmarkGoccyJSON-10            	      16	  69282865 ns/op	36913403 B/op	      12 allocs/op
+BenchmarkGoccyJSON-10            	      16	  68210427 ns/op	30621289 B/op	       8 allocs/op
+BenchmarkGoccyJSON-10            	      16	  68735924 ns/op	35864633 B/op	      11 allocs/op
+BenchmarkSegmentJSON-10          	      13	  88255208 ns/op	 2094113 B/op	       1 allocs/op
+BenchmarkSegmentJSON-10          	      12	  88640746 ns/op	10656526 B/op	       2 allocs/op
+BenchmarkSegmentJSON-10          	      12	  88659820 ns/op	10656526 B/op	       2 allocs/op
+BenchmarkSegmentJSON-10          	      13	  88343971 ns/op	 2094113 B/op	       1 allocs/op
+BenchmarkSegmentJSON-10          	      13	  89043388 ns/op	 9837000 B/op	       2 allocs/op
+BenchmarkSegmentJSON-10          	      13	  88279016 ns/op	 2094113 B/op	       1 allocs/op
+BenchmarkSegmentJSON-10          	      12	  88791979 ns/op	10656526 B/op	       2 allocs/op
+BenchmarkSegmentJSON-10          	      12	  88193969 ns/op	10656526 B/op	       2 allocs/op
+BenchmarkSegmentJSON-10          	      13	  88134897 ns/op	 2094113 B/op	       1 allocs/op
+BenchmarkSegmentJSON-10          	      12	  88373347 ns/op	10656526 B/op	       2 allocs/op
+PASS
+ok  	github.com/mfridman/benchmark-go-json	58.489s
