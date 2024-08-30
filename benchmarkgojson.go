@@ -62,6 +62,8 @@ func (a *AbbreviatedMetadata) MarshalJSON() ([]byte, error) {
 	b.WriteString(`","versions":{`)
 
 	first := true
+	var version []byte
+	var err error
 	for k, v := range a.Versions {
 		if !first {
 			b.WriteString(",")
@@ -70,8 +72,7 @@ func (a *AbbreviatedMetadata) MarshalJSON() ([]byte, error) {
 		b.WriteString(`"`)
 		b.WriteString(k)
 		b.WriteString(`":`)
-		version, err := v.MarshalJSON()
-		if err != nil {
+		if version, err = v.MarshalJSON(); err != nil {
 			return nil, err
 		}
 		b.Write(version)
@@ -80,18 +81,7 @@ func (a *AbbreviatedMetadata) MarshalJSON() ([]byte, error) {
 
 	if len(a.DistTags) > 0 {
 		b.WriteString(`,"dist-tags":{`)
-		first = true
-		for k, v := range a.DistTags {
-			if !first {
-				b.WriteString(",")
-			}
-			first = false
-			b.WriteString(`"`)
-			b.WriteString(k)
-			b.WriteString(`":"`)
-			b.WriteString(v)
-			b.WriteString(`"`)
-		}
+		writeStringMap(b, a.DistTags)
 		b.WriteString(`}`)
 	}
 
@@ -122,50 +112,17 @@ func (v *VersionObject) MarshalJSON() ([]byte, error) {
 	}
 	if len(v.Dependencies) > 0 {
 		b.WriteString(`,"dependencies":{`)
-		first := true
-		for k, v := range v.Dependencies {
-			if !first {
-				b.WriteString(",")
-			}
-			first = false
-			b.WriteString(`"`)
-			b.WriteString(k)
-			b.WriteString(`":"`)
-			b.WriteString(v)
-			b.WriteString(`"`)
-		}
+		writeStringMap(b, v.Dependencies)
 		b.WriteString(`}`)
 	}
 	if len(v.DevDependencies) > 0 {
 		b.WriteString(`,"devDependencies":{`)
-		first := true
-		for k, v := range v.DevDependencies {
-			if !first {
-				b.WriteString(",")
-			}
-			first = false
-			b.WriteString(`"`)
-			b.WriteString(k)
-			b.WriteString(`":"`)
-			b.WriteString(v)
-			b.WriteString(`"`)
-		}
+		writeStringMap(b, v.DevDependencies)
 		b.WriteString(`}`)
 	}
 	if len(v.PeerDependencies) > 0 {
 		b.WriteString(`,"peerDependencies":{`)
-		first := true
-		for k, v := range v.PeerDependencies {
-			if !first {
-				b.WriteString(",")
-			}
-			first = false
-			b.WriteString(`"`)
-			b.WriteString(k)
-			b.WriteString(`":"`)
-			b.WriteString(v)
-			b.WriteString(`"`)
-		}
+		writeStringMap(b, v.PeerDependencies)
 		b.WriteString(`}`)
 	}
 	b.WriteString("}")
